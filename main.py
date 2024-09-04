@@ -1,24 +1,15 @@
 import random
-computer=random.choice([-1,0,1])
-youstr=input("enter your choice:")
-youDict={"s":1,"w":0,"g":-1}
-reverseDict= {1:"snake",0:"water",-1:"gun"}
-you=youDict[youstr]
-print(f"you chose{reverseDict[you]}\ncomputer chose{reverseDict[computer]}")
-if(computer==you):
-    print("its a draw")
+n=random.randint(1,100)
+a=-1
+guesses=1
+while(a!=n):
+  
+    a=int(input("guess the number:"))
+    if(a>n):
+        print("lower number please")
+        guesses+=1
+    elif(a<n):
+        print("higher number please")
+        guesses+=1
 
-else:
-    if(computer==-1 and you==1):
-        print("you win")
-    if(computer==-1 and you==0):
-        print("you win")
-    if(computer==1 and you==-1):
-        print("you win")
-    if(computer==1 and you==0):
-        print("you win")
-    if(computer==0 and you==-1):
-        print("you win")
-    if(computer==0 and you==1):
-        print("you win")
-    
+print(f"you have guessed the {n} correctly in {guesses} attempts")
